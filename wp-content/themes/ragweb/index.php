@@ -1,0 +1,990 @@
+<?php get_header()?>
+<!-- slider-area -->
+<section class="slider__area">
+    <div class="swiper-container slider_baner__active slider_baner_home6">
+        <div class="swiper-wrapper">
+            <?php
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3, // Adjust the number of posts to display
+                'order' => 'DESC', // Display posts in descending order (latest first)
+            );
+            $latest_posts = new WP_Query($args);
+            if ($latest_posts->have_posts()) :
+                while ($latest_posts->have_posts()) : $latest_posts->the_post();
+            ?>
+                    <div class="swiper-slide slider__single">
+                        <div class="slider__bg" data-background="<?php echo get_the_post_thumbnail_url(); ?>"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="banner__content-three">
+                                        <h2 class="title text-white">
+                                            <?php echo wp_trim_words(esc_html(get_the_title()), 10); ?>
+                                        </h2>
+                                        <div class="entry-content text-light">
+                                        <?php echo wp_trim_words(esc_html(get_the_excerpt()), 30); ?>
+                                        </div>
+                                        <a class='btn mt-3' href='<?php the_permalink(); ?>'>Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                endwhile;
+                wp_reset_postdata(); // Restore global post data
+            endif;
+            ?>
+        </div>
+    </div>
+    <div class="box-button-slider-bottom">
+        <div class="container">
+            <div class="testimonial__nav-four">
+                <div class="testimonial-two-button-prev button-swiper-prev"><i class="flaticon-right-arrow"></i></div>
+                <div class="testimonial-two-button-next button-swiper-next"><i class="flaticon-right-arrow"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- slider-area-end -->
+
+ 
+    <!-- features-area -->
+    <section class="features__area">
+        <div class="container-fluid p-0">
+            <div class="features__item-wrap">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="features__item">
+                            <div class="features__icon">
+                                <i class="flaticon-financial-profit"></i>
+                            </div>
+                            <div class="features__content">
+                                <h4 class="title"><a href='services-details.html'>Leading Media House</a></h4>
+                                <p>RAG helps youcona doing <br> tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="features__item">
+                            <div class="features__icon">
+                                <i class="flaticon-light-bulb"></i>
+                            </div>
+                            <div class="features__content">
+                                <h4 class="title"><a href='services-details.html'>Strategic Entertainer</a></h4>
+                                <p>RAG helps youcona doing <br> tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="features__item">
+                            <div class="features__icon">
+                                <i class="flaticon-target"></i>
+                            </div>
+                            <div class="features__content">
+                                <h4 class="title"><a href='services-details.html'>Business Goal</a></h4>
+                                <p>RAG helps youcona doing <br> tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="features__item">
+                            <div class="features__icon">
+                                <i class="flaticon-profit"></i>
+                            </div>
+                            <div class="features__content">
+                                <h4 class="title"><a href='services-details.html'>Focused on Growth</a></h4>
+                                <p>RAG helps youcona doing <br> tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- features-area-end -->
+    <!-- about-area -->
+    <section class="about__area-two about__bg" data-background="<?php echo get_template_directory_uri(); ?>/assets/img/bg/about_bg.jpg">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="about__img-wrap-two">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_about_img.jpg" alt="">
+                        <div class="shape">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_about_img_shape.png" alt="" class="alltuchtopdown">
+                        </div>
+                        <div class="experience__box-two">
+                            <div class="experience__shape">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 295" fill="none" preserveAspectRatio="none">
+                                    <path d="M70.7685 260.479C77.6405 257.127 82 250.15 82 242.503L82 44.8205C82 36.5032 76.8524 29.054 69.0724 26.1128L-3.51784e-06 9.7784e-07L0 295L70.7685 260.479Z" fill="currentcolor" />
+                                </svg>
+                            </div>
+                            <div class="experience__content">
+                                <h4 class="title">25</h4>
+                                <p> the Industry  <br>Years in </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about__content-two">
+                        <div class="section-title mb-20 tg-heading-subheading animation-style3">
+                            <span class="sub-title">About Radio Africa Group</span>
+                            <h2 class="title tg-element-title">Learn More About Radio Africa Group</h2>
+                        </div>
+                        <p>Mauris ut enim sit amet lacus ornare ullamcorper. Praesent placerat neque eu purus rhoncus, vel tincidunt odio ultrices. Sed theya are feugiat elis Curabitur posuere tristique.</p>
+                        <div class="about__content-inner">
+                            <div class="about__list-box">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-arrow-button"></i>Challenge Business Growth</li>
+                                    <li><i class="flaticon-arrow-button"></i>Analysis & Research</li>
+                                    <li><i class="flaticon-arrow-button"></i>Finance Security Solutions</li>
+                                    <li><i class="flaticon-arrow-button"></i>100% Money Growth</li>
+                                </ul>
+                            </div>
+                            <div class="about__list-img">
+                                <img src="https://img.freepik.com/free-photo/view-retro-radio-nutshell-tones_23-2151208133.jpg?t=st=1712053171~exp=1712056771~hmac=4a3bda544c651b4247ad870ea132f394133350cb90cc1b53caec5363f8c1a526&w=1800" style="height: auto; aspect-ratio: 1/1;" alt="">
+                            </div>
+                        </div>
+                        <div class="about-bottom">
+                            <div class="author-wrap">
+                                <div class="thumb">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mart.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/sign.png" alt="">
+                                    <h4 class="title">Martin Khafafa <span>, CEO</span></h4>
+                                </div>
+                            </div>
+                            <a class='btn btn-two' href='<?php echo home_url('/about');?>'>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about__shape-wrap-two">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_about_shape01.png" alt="" data-parallax='{"x" : -80 , "y" : 80 , "rotateZ":80}'>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_about_shape02.png" alt="" data-parallax='{"y" : 100 }'>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_about_shape03.png" alt="" data-aos="fade-left" data-aos-delay="400">
+        </div>
+    </section>
+    <!-- about-area-end -->
+    <!-- services-area -->
+    <section class="services__area-six services__bg-six" data-background="<?php echo get_template_directory_uri(); ?>/assets/img/bg/h3_services_bg.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section-title white-title mb-40">
+                        <span class="sub-title">WHAT WE OFFER</span>
+                        <h2 class="title">Discover Our Products <br> & Services</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-more-btn">
+                        <a class='btn border-btn' href='services.html'>See More Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="services__tab-wrap">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health-tab-pane" type="button" role="tab" aria-controls="health-tab-pane" aria-selected="true"><i class="flaticon-healthcare"></i> Radios</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel-tab-pane" type="button" role="tab" aria-controls="travel-tab-pane" aria-selected="false"><i class="flaticon-travel-insurance"></i>Social</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="vehicle-tab" data-bs-toggle="tab" data-bs-target="#vehicle-tab-pane" type="button" role="tab" aria-controls="vehicle-tab-pane" aria-selected="false"><i class="flaticon-protection"></i>Print</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="cargo-tab" data-bs-toggle="tab" data-bs-target="#cargo-tab-pane" type="button" role="tab" aria-controls="cargo-tab-pane" aria-selected="false"><i class="flaticon-ship"></i>Market Intelligence</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="fire-tab" data-bs-toggle="tab" data-bs-target="#fire-tab-pane" type="button" role="tab" aria-controls="fire-tab-pane" aria-selected="false"><i class="flaticon-house"></i>Events</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="bike-tab" data-bs-toggle="tab" data-bs-target="#bike-tab-pane" type="button" role="tab" aria-controls="bike-tab-pane" aria-selected="false"><i class="flaticon-motorbike"></i>Sponsored Content</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="health-tab-pane" role="tabpanel" aria-labelledby="health-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img01.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Our Radios</a></h2>
+                                        <p>Explore our great, quality radio stations and solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Classic 105</li>
+                                                <li><i class="fas fa-check"></i>Kiss100</li>
+                                                <li><i class="fas fa-check"></i>Radio Jambo</li>
+                                                <li><i class="fas fa-check"></i>East FM</li>
+                                                <li><i class="fas fa-check"></i>Gukena</li>
+                                                <li><i class="fas fa-check"></i>Homeboyz Radio</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="travel-tab-pane" role="tabpanel" aria-labelledby="travel-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img02.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Socials</a></h2>
+                                        <p>Explore our savings, quality care and wellness solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Business Growth</li>
+                                                <li><i class="fas fa-check"></i>Analysis & Research</li>
+                                                <li><i class="fas fa-check"></i>100% Secure</li>
+                                            </ul>
+                                        </div>
+                                        <a class='btn' href='services-details.html'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="vehicle-tab-pane" role="tabpanel" aria-labelledby="vehicle-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img03.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Print</a></h2>
+                                        <p>Explore our savings, quality care and wellness solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Business Growth</li>
+                                                <li><i class="fas fa-check"></i>Analysis & Research</li>
+                                                <li><i class="fas fa-check"></i>100% Secure</li>
+                                            </ul>
+                                        </div>
+                                        <a class='btn' href='services-details.html'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cargo-tab-pane" role="tabpanel" aria-labelledby="cargo-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img04.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Market Intelligence</a></h2>
+                                        <p>Explore our savings, quality care and wellness solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Business Growth</li>
+                                                <li><i class="fas fa-check"></i>Analysis & Research</li>
+                                                <li><i class="fas fa-check"></i>100% Secure</li>
+                                            </ul>
+                                        </div>
+                                        <a class='btn' href='services-details.html'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="fire-tab-pane" role="tabpanel" aria-labelledby="fire-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img05.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Events</a></h2>
+                                        <p>Explore our savings, quality care and wellness solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Business Growth</li>
+                                                <li><i class="fas fa-check"></i>Analysis & Research</li>
+                                                <li><i class="fas fa-check"></i>100% Secure</li>
+                                            </ul>
+                                        </div>
+                                        <a class='btn' href='services-details.html'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="bike-tab-pane" role="tabpanel" aria-labelledby="bike-tab" tabindex="0">
+                                <div class="services__item-four shine-animate-item">
+                                    <div class="services__thumb-four shine-animate">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/h3_services_img06.jpg" alt="">
+                                    </div>
+                                    <div class="services__content-four">
+                                        <h2 class="title"><a href='services-details.html'>Sponsored Content</a></h2>
+                                        <p>Explore our savings, quality care and wellness solutions to craft the perfect plan for your busineshen an unknown printer.</p>
+                                        <div class="about__list-box">
+                                            <ul class="list-wrap">
+                                                <li><i class="fas fa-check"></i>Business Growth</li>
+                                                <li><i class="fas fa-check"></i>Analysis & Research</li>
+                                                <li><i class="fas fa-check"></i>100% Secure</li>
+                                            </ul>
+                                        </div>
+                                        <a class='btn' href='services-details.html'>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services-area-end -->
+    <!-- services-area -->
+    <section class="services__area-seven services__bg-seven">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-title text-center mb-50 tg-heading-subheading animation-style3">
+                        <span class="sub-title">WHAT WE OFFER</span>
+                        <h2 class="title tg-element-title">The Best Of Product<br class="d-none d-lg-block" /> Your Business</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="services__item-wrap-two">
+                <div class="row justify-content-center gutter-24">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-profit"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>Finance Sync Provisions</a></h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas nulla sit amet antea rcu magna tristique mattis</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-light-bulb"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>Idea Development</a></h2>
+                                <p>Proin ornare iaculis pretium. Cras viverra tempor sem, id tincidunt sem iaculis quis. Cras viverra mauris vel turpis euismod euismod.</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-startup"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>SEO Consulting</a></h2>
+                                <p>Etiam non interdum lorem. Quisque sapien velit, sollicitudin eu eros vel, mollis tincidunt felis. Duis ultrices leo ligula, in ornare sem</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-target"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>Target Audience</a></h2>
+                                <p>Beauis utter enim amet lacus ornare ullamcorper Praesent neque purus rhoncus.</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-target"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>Target Audience</a></h2>
+                                <p>Beauis utter enim amet lacus ornare ullamcorper Praesent neque purus rhoncus.</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services__item-five services__item-six">
+                            <div class="services__icon-five">
+                                <div class="icon">
+                                    <i class="flaticon-target"></i>
+                                </div>
+                                <div class="services__icon-shape">
+                                    <div class="shape one">
+                                        <svg width="68" height="78" viewBox="0 0 68 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.1376 1.6526C32.9089 0.629968 35.0911 0.629967 36.8624 1.6526L64.9126 17.8474C66.6839 18.87 67.775 20.7599 67.775 22.8052V55.1948C67.775 57.2401 66.6839 59.13 64.9126 60.1526L36.8624 76.3474C35.0911 77.37 32.9089 77.37 31.1376 76.3474L3.0874 60.1526C1.31615 59.13 0.22501 57.2401 0.22501 55.1948V22.8052C0.22501 20.7599 1.31614 18.87 3.08739 17.8474L31.1376 1.6526Z" fill="#FEF6E6" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="services__content-five">
+                                <h2 class="title"><a href='services-details.html'>Target Audience</a></h2>
+                                <p>Beauis utter enim amet lacus ornare ullamcorper Praesent neque purus rhoncus.</p>
+                                <a class='btn' href='services-details.html'>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services-area-end -->
+    <!-- testimonial-area -->
+    <section class="testimonial__area-two">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title white-title text-center mb-50">
+                        <span class="sub-title">Customers Testimonials</span>
+                        <h2 class="title">What Our Loving Customers Are Saying</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center gutter-24">
+                <div class="col-12">
+                    <div class="swiper-container testiminials-active">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial__item-two">
+                                    <div class="testimonial__info-two">
+                                        <h2 class="title">John Maasai</h2>
+                                        <span> Kenya Crop Seeds</span>
+                                    </div>
+                                    <div class="testimonial__rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                                    <div class="icon">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                                    </div>
+                                </div>
+                            </div> <!--swiper slider-->
+                            <div class="swiper-slide">
+                                <div class="testimonial__item-two"> 
+                                    <div class="testimonial__info-two">
+                                        <h2 class="title">Grace Washio</h2>
+                                        <span>JAKS EA</span>
+                                    </div>
+                                    <div class="testimonial__rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                                    <div class="icon">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                                    </div>
+                                </div>
+                            </div><!--swiper slider-->
+                            <div class="swiper-slide">
+                                <div class="testimonial__item-two"> 
+                                    <div class="testimonial__info-two">
+                                        <h2 class="title">Mercy Kamsa</h2>
+                                        <span>Change in Africa</span>
+                                    </div>
+                                    <div class="testimonial__rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                                    <div class="icon">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                                    </div>
+                                </div>
+                            </div><!--swiper slider-->
+                            <div class="swiper-slide">
+                                <div class="testimonial__item-two"> 
+                                    <div class="testimonial__info-two">
+                                        <h2 class="title">Jack Kamsa</h2>
+                                        <span>The Star</span>
+                                    </div>
+                                    <div class="testimonial__rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                                    <div class="icon">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                                    </div>
+                                </div>
+                            </div><!--swiper slider-->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6">
+                    <div class="testimonial__item-two">
+                        <div class="testimonial__avatar">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/testi_avatar01.png" alt="">
+                        </div>
+                        <div class="testimonial__info-two">
+                            <h2 class="title">John Gripsonery</h2>
+                            <span>CEO,JAKS Shans</span>
+                        </div>
+                        <div class="testimonial__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial__item-two">
+                        <div class="testimonial__avatar">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/testi_avatar02.png" alt="">
+                        </div>
+                        <div class="testimonial__info-two">
+                            <h2 class="title">Kristin Watson</h2>
+                            <span>CEO,JAKS Shans</span>
+                        </div>
+                        <div class="testimonial__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial__item-two">
+                        <div class="testimonial__avatar">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/testi_avatar03.png" alt="">
+                        </div>
+                        <div class="testimonial__info-two">
+                            <h2 class="title">Wade Warren</h2>
+                            <span>CEO,JAKS Shans</span>
+                        </div>
+                        <div class="testimonial__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Songerty successfully cope with tasks of varying complexity provide area guarantees and regularly.</p>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/quote.svg" alt="">
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="testimonial__shape-two">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/h2_testimonial_shape.png" alt="" data-aos="fade-up" data-aos-delay="400">
+        </div>
+    </section>
+    <!-- testimonial-area-end -->
+    <!-- slide partners -->
+    <section class="partners__area-six">
+        <div class="box-swiper">
+            <div class="swiper-container slider_partners__active">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider__partner">
+                        <h4 class="text-stroke"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/snow-icon.svg" /> Radios</h4>
+                    </div>
+                    <div class="swiper-slide slider__partner">
+                        <h4 class="text-stroke"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/snow-icon.svg" /> Social</h4>
+                    </div>
+                    <div class="swiper-slide slider__partner">
+                        <h4 class="text-stroke"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/snow-icon.svg" /> Print</h4>
+                    </div>
+                    <div class="swiper-slide slider__partner">
+                        <h4 class="text-stroke"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/snow-icon.svg" /> Events</h4>
+                    </div>
+                    <div class="swiper-slide slider__partner">
+                        <h4 class="text-stroke"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/snow-icon.svg" /> Sponsored Content</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end slide partners -->
+    <!-- choose-area -->
+    <section class="choose__area-five choose__area-six">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 mb-35">
+                    <div class="choose__content-five">
+                        <div class="section-title mb-30 tg-heading-subheading animation-style3">
+                            <span class="sub-title">About OUR Company</span>
+                            <h2 class="title tg-element-title">We provide comprehensive media solutions and digital platform for your business</h2>
+                        </div>
+                        <p>Mauris ut enim sit amet lacus ornare ullamcorper. Praesent plaacerat
+                            neque eu purus rhoncus, vel tincidunt odio ultrices. Seed theya are
+                            feugiat elis Curabitur posuere tristique.</p>
+                        <div class="choose__box-wrap">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="choose__box">
+                                        <div class="icon">
+                                            <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2.67508 18.7905C2.83765 18.7905 3.00021 18.7323 3.12795 18.6277C6.2632 16.4995 10.3739 16.5228 13.4859 18.6742C13.602 18.744 13.7414 18.7905 13.8807 18.8021C15.2509 18.2672 16.5515 17.0461 19.4893 17.0577C21.3473 17.0693 23.1704 17.6275 24.7031 18.6858C24.8193 18.7556 24.9586 18.8021 25.098 18.8137C26.4798 18.2788 27.7223 17.0693 30.7066 17.0693C32.5413 17.081 34.3295 17.6275 35.8507 18.6509C35.9785 18.7556 36.141 18.8137 36.3036 18.8137C36.501 18.8137 36.6984 18.7207 36.8261 18.5695C36.9539 18.4183 37.0119 18.209 36.9887 18.0113C36.8377 8.41707 29.0344 0.753296 19.4893 0.753296C9.94423 0.753296 2.14092 8.44033 1.97835 17.9997C1.95513 18.1974 2.01319 18.3951 2.15253 18.5463C2.29188 18.6975 2.47767 18.7905 2.67508 18.7905ZM35.5488 16.8135C32.4832 15.2203 28.8254 15.2435 25.7831 16.8716C25.6321 11.0453 24.4361 5.1841 22.2995 2.40467C29.4409 3.69553 34.8521 9.59164 35.5488 16.8135ZM19.4893 2.14882C21.7305 2.17208 24.1574 8.13796 24.378 16.8484C21.324 15.2319 17.6546 15.2319 14.6007 16.8484C14.8213 8.13796 17.2598 2.17208 19.4893 2.14882ZM16.6792 2.40467C14.5426 5.17247 13.3466 11.0337 13.1956 16.8716C10.1532 15.2435 6.49544 15.2203 3.42986 16.8251C4.12658 9.59164 9.5378 3.69553 16.6792 2.40467Z" fill="#ed1d24" />
+                                                <path d="M38.8815 33.8622C38.1383 31.6759 36.4429 29.9431 34.2831 29.1407C35.4095 28.2917 36.083 26.966 36.083 25.5472C35.8739 19.5929 27.3042 19.5929 27.0952 25.5472C27.0952 26.966 27.7687 28.2917 28.8951 29.1407C27.7571 29.5709 26.7353 30.2571 25.9224 31.1525C24.9354 30.292 23.7858 29.6407 22.5433 29.2221C27.1997 26.2217 25.1096 18.8719 19.4893 18.8486C16.9927 18.8486 14.7981 20.4884 14.0897 22.8957C13.3814 25.2913 14.3452 27.873 16.4354 29.2221C15.1929 29.6291 14.0433 30.292 13.0563 31.1525C12.2318 30.2571 11.2216 29.5709 10.0836 29.1407C11.628 27.9777 12.2666 25.9542 11.6512 24.1168C11.0358 22.2793 9.32878 21.0466 7.38957 21.035C5.46197 21.035 3.74339 22.2677 3.12795 24.1051C2.51251 25.9426 3.15117 27.9661 4.69558 29.129C2.43122 29.85 -1.2498 33.49 0.422338 36.0136C0.88682 36.6649 1.62999 37.0486 2.43122 37.0486H10.1532C10.5248 38.3395 11.6976 39.235 13.0446 39.2466H25.934C27.281 39.235 28.4538 38.3511 28.8254 37.0486H36.5474C37.3255 37.0486 38.0686 36.6765 38.5215 36.0369C38.986 35.4205 39.1253 34.6065 38.8815 33.8622ZM28.5003 25.5472C28.5119 23.8493 29.8937 22.4654 31.6007 22.4654C33.2961 22.4654 34.6895 23.8376 34.7011 25.5472C34.6895 27.2451 33.3077 28.629 31.6007 28.629C29.8937 28.6173 28.5119 27.2451 28.5003 25.5472ZM15.2509 24.4889C15.4251 18.8835 23.5536 18.8835 23.7277 24.4889C23.5536 30.0943 15.4367 30.0943 15.2509 24.4889ZM4.28915 25.5472C4.30077 23.8493 5.6826 22.4654 7.38957 22.4654C9.09654 22.4654 10.4784 23.8376 10.49 25.5472C10.4784 27.2451 9.09654 28.629 7.38957 28.629C5.6826 28.629 4.31238 27.2451 4.28915 25.5472ZM10.13 35.6647H2.44284C2.09447 35.6647 1.76934 35.4903 1.56032 35.2112C1.37453 34.9553 1.31647 34.6181 1.42098 34.3157C2.83765 29.8268 9.02687 28.5592 12.0692 32.141C11.1751 33.1644 10.5132 34.3623 10.13 35.6647ZM25.934 37.8627H13.0446C12.5453 37.8627 12.0692 37.6301 11.7789 37.2231C11.477 36.8277 11.3841 36.3044 11.5351 35.8276C12.7079 32.4201 15.9012 30.1292 19.5009 30.1292C23.1007 30.1292 26.294 32.4201 27.4668 35.8276C27.6062 36.3044 27.5133 36.8277 27.223 37.2231C26.9094 37.6301 26.4333 37.8627 25.934 37.8627ZM37.43 35.2112C37.2326 35.4903 36.8958 35.6647 36.5474 35.6647H28.8486C28.4655 34.3623 27.8036 33.1528 26.9094 32.141C29.9402 28.5592 36.141 29.8384 37.5577 34.3157C37.6738 34.6181 37.6158 34.9553 37.43 35.2112Z" fill="#ed1d24" />
+                                            </svg>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title">Team Support</h4>
+                                            <p> helps youcona doing <br> tempor incididunt.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="choose__box">
+                                        <div class="icon">
+                                            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.017 23.2452H21.0658C21.3969 23.2452 21.6657 22.9764 21.6657 22.6453C21.6657 22.3141 21.3969 22.0453 21.0658 22.0453H13.017C12.6858 22.0453 12.417 22.3141 12.417 22.6453C12.417 22.9764 12.6857 23.2452 13.017 23.2452Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.083 22.6453V37.0904C18.083 37.4217 18.3518 37.6904 18.683 37.6904C19.0138 37.6904 19.2829 37.4216 19.2829 37.0904V22.6453C19.2829 22.314 19.0138 22.0453 18.683 22.0453C18.3518 22.0453 18.083 22.3141 18.083 22.6453Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.23354 0.30957C2.89836 0.30957 1.00195 2.20598 1.00195 4.54154C1.00195 6.8771 2.89836 8.77313 5.23354 8.77313C7.56917 8.77313 9.46558 6.87716 9.46558 4.54154C9.46558 2.20592 7.56917 0.30957 5.23354 0.30957ZM5.23354 1.50957C6.90714 1.50957 8.26558 2.868 8.26558 4.54154C8.26558 6.21476 6.90714 7.57313 5.23354 7.57313C3.56032 7.57313 2.20195 6.21476 2.20195 4.54154C2.20195 2.86794 3.56038 1.50957 5.23354 1.50957Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M32.7672 0.30957C30.4316 0.30957 28.5352 2.20598 28.5352 4.54154C28.5352 6.8771 30.4316 8.77313 32.7672 8.77313C35.1024 8.77313 36.9988 6.87716 36.9988 4.54154C36.9988 2.20592 35.1024 0.30957 32.7672 0.30957ZM32.7672 1.50957C34.4404 1.50957 35.7988 2.868 35.7988 4.54154C35.7988 6.21476 34.4404 7.57313 32.7672 7.57313C31.0936 7.57313 29.7352 6.21476 29.7352 4.54154C29.7352 2.86794 31.0936 1.50957 32.7672 1.50957Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.54042 17.3828C8.63962 17.5829 8.84524 17.716 9.07765 17.716L9.30045 17.6728L14.8252 15.4644C15.6756 15.1248 16.6416 15.5388 16.9816 16.3892C17.3212 17.2392 16.9069 18.2052 16.0568 18.5452L8.76047 21.4616C8.06325 21.7403 7.27366 21.5148 6.82685 20.9292C6.67087 20.7248 6.40163 20.6424 6.15768 20.7248C5.9141 20.8071 5.75009 21.036 5.75009 21.2932V24.3064C5.75009 24.6112 5.97848 24.8672 6.28091 24.9024L11.1373 25.4632C12.2849 25.5956 13.1513 26.5676 13.1513 27.7232V37.0904C13.1513 37.4217 13.4201 37.6904 13.7513 37.6904C14.0825 37.6904 14.3512 37.4216 14.3512 37.0904V27.7232C14.3512 25.958 13.0281 24.4736 11.2749 24.2712L6.95002 23.7717V22.5188C7.64204 22.8368 8.45484 22.876 9.20565 22.5761L16.5025 19.6597C17.9672 19.0737 18.6813 17.4089 18.0957 15.9436C17.5101 14.4784 15.8453 13.7644 14.3801 14.35L9.32568 16.3704L6.42209 11.6181C6.01211 10.9469 5.34369 10.4745 4.57449 10.3116C4.5509 10.3069 4.52731 10.3017 4.50328 10.2968C3.69725 10.1264 2.85685 10.312 2.19765 10.806C1.53845 11.3004 1.12445 12.0548 1.06202 12.8764C0.709208 17.5188 0.00163137 26.8228 0.00163137 26.8228C0.000376471 26.838 0 26.8532 0 26.8684C0 28.6316 1.32041 30.1148 3.07118 30.3196L7.40116 30.8788V37.0904C7.40116 37.4216 7.66996 37.6903 8.00113 37.6903C8.3323 37.6903 8.6011 37.4215 8.6011 37.0904V30.3512C8.6011 30.0492 8.3771 29.7948 8.07787 29.756L3.21387 29.1285C2.07429 28.9969 1.21224 28.0376 1.19987 26.8929C1.19987 26.8897 2.25826 12.9673 2.25826 12.9673C2.29465 12.4908 2.53465 12.0529 2.91708 11.7665C3.29989 11.4796 3.78711 11.372 4.25506 11.4709L4.32584 11.4857C4.77227 11.5801 5.15984 11.8545 5.39783 12.2437C6.30544 13.7293 8.145 16.7405 8.50384 17.3281C8.51602 17.3473 8.528 17.3656 8.54042 17.3828Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.77746 18.2557L5.70549 21.4121C6.43227 22.6017 7.91148 23.0936 9.20629 22.5761C9.51387 22.4533 9.66389 22.1036 9.54072 21.7964C9.41793 21.4889 9.06831 21.3388 8.76111 21.4616C8.00993 21.7621 7.15151 21.4768 6.72949 20.7864L4.80152 17.63C4.62872 17.3476 4.25909 17.2585 3.97674 17.4308C3.69426 17.6037 3.60466 17.9733 3.77746 18.2557Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.119 17.2796L22.3094 18.1012C20.747 18.322 19.6582 19.77 19.879 21.3324C20.0998 22.8944 21.5478 23.9836 23.1102 23.7628L30.2554 22.752C30.5335 22.7127 30.8006 22.6336 31.0498 22.5187V23.7715L26.725 24.2711C24.9718 24.4735 23.6486 25.9579 23.6486 27.7231V37.0903C23.6486 37.4215 23.9174 37.6903 24.2486 37.6903C24.5798 37.6903 24.8486 37.4214 24.8486 37.0903V27.7231C24.8486 26.5675 25.7149 25.5954 26.8626 25.4631L31.7173 24.9022H31.7161C32.0166 24.8694 32.2497 24.6151 32.2497 24.3062V21.2926C32.2497 21.0354 32.0857 20.8071 31.8421 20.7247C31.5986 20.6418 31.3293 20.7243 31.173 20.9287C30.9102 21.2727 30.521 21.5026 30.0873 21.5639L22.9421 22.5743C22.0353 22.7026 21.1953 22.0707 21.0673 21.1639C20.9389 20.2575 21.5709 19.4175 22.4773 19.2891L28.5657 18.4283L28.4833 18.4338L28.9953 18.1467L32.2417 12.8327C32.6569 12.1534 33.4173 11.7635 34.2113 11.8235C34.2226 11.8243 34.2333 11.825 34.2445 11.8258C35.3141 11.9067 36.1553 12.773 36.2041 13.8442L36.7997 26.881C36.7933 28.0306 35.9293 28.9959 34.7857 29.1282L30.0229 29.6783C29.7233 29.7127 29.4961 29.9643 29.4921 30.2659L29.3985 37.0819C29.3941 37.4131 29.6592 37.6855 29.9901 37.6903C30.3213 37.6946 30.5937 37.4295 30.5985 37.0983L30.6845 30.8094L34.9233 30.3202C36.6765 30.1178 37.9997 28.633 37.9997 26.8682C37.9997 26.859 37.9993 26.8498 37.9989 26.8406C37.9989 26.8406 37.6013 18.1351 37.4029 13.7895C37.3261 12.1118 36.0093 10.7555 34.3349 10.6294C34.3236 10.6286 34.3125 10.6274 34.3017 10.6266C33.0585 10.533 31.8677 11.1434 31.2177 12.207L28.119 17.2796Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.6671 2.10954C24.6671 1.63236 24.4775 1.17432 24.1399 0.836755C23.8023 0.499123 23.3448 0.30957 22.8671 0.30957H14.4963C13.5019 0.30957 12.6963 1.11559 12.6963 2.10954V9.73514C12.6963 10.1271 12.9251 10.4831 13.2819 10.6455C13.6387 10.8079 14.0575 10.7467 14.3531 10.4891C14.9303 9.98631 15.7435 9.27748 16.1966 8.88231C16.3063 8.78712 16.4463 8.73473 16.5911 8.73473H22.8671C23.3447 8.73473 23.8023 8.54511 24.1399 8.20755C24.4774 7.86991 24.667 7.41194 24.667 6.93476V2.10954H24.6671ZM13.8963 9.29555V2.10954C13.8963 1.77837 14.1647 1.50957 14.4963 1.50957H22.8671C23.0263 1.50957 23.179 1.57275 23.2915 1.68557C23.4039 1.79795 23.4671 1.95035 23.4671 2.10954V6.93476C23.4671 7.09395 23.4039 7.24635 23.2915 7.35873C23.1791 7.47155 23.0263 7.53473 22.8671 7.53473H16.5911C16.1563 7.53473 15.7364 7.69191 15.4083 7.97752L13.8963 9.29555Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0091 4.02648H21.4459C21.7772 4.02648 22.0459 3.75768 22.0459 3.42651C22.0459 3.09534 21.7771 2.82654 21.4459 2.82654H16.0091C15.678 2.82654 15.4092 3.09534 15.4092 3.42651C15.4092 3.75768 15.6779 4.02648 16.0091 4.02648Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0091 6.21446H18.6823C19.0131 6.21446 19.2823 5.94566 19.2823 5.6145C19.2823 5.28326 19.0131 5.01453 18.6823 5.01453H16.0091C15.678 5.01453 15.4092 5.28333 15.4092 5.6145C15.4091 5.94566 15.6779 6.21446 16.0091 6.21446Z" fill="#ed1d24" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M28.453 23.0073L30.2558 22.7521C31.1018 22.6325 31.8498 22.1409 32.2954 21.4122L34.2233 18.2558C34.3961 17.9734 34.3065 17.6038 34.0241 17.431C33.7417 17.2586 33.3721 17.3478 33.1993 17.6302L31.2714 20.7866C31.013 21.2094 30.5785 21.4946 30.0877 21.5642L28.285 21.819C27.9569 21.8654 27.7282 22.1694 27.7745 22.4974C27.821 22.8249 28.125 23.0537 28.453 23.0073Z" fill="#ed1d24" />
+                                            </svg>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title">Financial Experts</h4>
+                                            <p>Apexa helps youcona doing <br> tempor incididunt.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9 mb-35">
+                    <div class="choose__img-wrap-five">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/project.png" alt="Apexa">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/card.png" class="shape-bottom-left" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/icon.svg" class="shape-left" alt="" data-parallax='{"x" : 40}'>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/hassle.png" alt="" class="alltuchtopdown">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/dot.svg" alt="" class="shape-top-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- choose-area-end -->
+    <!-- all services -->
+    <section class="all_services__area-six">
+        <div class="container">
+            <h2>We offer specialized media and entertainment<br class="d-none d-lg-block" /> services tailored to both businesses and individuals.</h2>
+            <p>Empowering Businesses through Strategic Products</p>
+            <a class='btn' data-aos-delay='600' data-aos='fade-up' href='case-studies'> All Case Studies</a>
+        </div>
+    </section>
+    <!-- end all services -->
+ <!-- team-area -->
+<section class="team-area pt-120 pb-90">
+    <div class="container">
+    <div class="section-title mb-30 tg-heading-subheading animation-style3 text-center">
+                <span class="sub-title text-capitalize">Media Experts</span>
+                <h2 class="title tg-element-title">Meet Our Amazing Team</h2>
+            </div>
+        <div class="team-item-wrap">
+            <div class="row justify-content-center">
+                <?php
+                // Custom query to retrieve management posts
+                $management_query = new WP_Query(array(
+                    'post_type' => 'management',
+                    'posts_per_page' => 4, // Retrieve all posts
+                ));
+
+                // Check if there are any management posts
+                if ($management_query->have_posts()) :
+                    // Loop through management posts
+                    while ($management_query->have_posts()) : $management_query->the_post();
+                        // Retrieve post meta data
+                        $position = get_post_meta(get_the_ID(), '_management_position', true);
+                        $twitter_link = get_post_meta(get_the_ID(), '_management_twitter_link', true);
+                        $instagram_link = get_post_meta(get_the_ID(), '_management_instagram_link', true);
+                ?>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                            <div class="team-item">
+                                <div class="team-thumb">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                </a>
+                                    <div class="team-social">
+                                        <div class="social-toggle-icon">
+                                            <i class="fas fa-share-alt"></i>
+                                        </div>
+                                        <ul class="list-wrap">
+                                            <li><a href="<?php echo esc_url($twitter_link); ?>"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="<?php echo esc_url($instagram_link); ?>"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-content">
+                                    
+                                    <h4 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                    <span><?php echo esc_html($position); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata(); // Reset post data query
+                else :
+                    echo 'No management posts found.';
+                endif;
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- team-area-end -->
+
+    <!-- FAQ -->
+    <section class="faqs__area-six">
+        <div class="circle" data-parallax='{"x" : 100 , "y" : 100 }'></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-30">
+                    <div class="box-need-help">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/img-faq.png" />
+                        <div class="box-text-need-help">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2563 21.887H19.8349C20.1467 21.887 20.3998 21.6339 20.3998 21.3221C20.3998 21.0103 20.1467 20.7572 19.8349 20.7572H12.2563C11.9445 20.7572 11.6914 21.0103 11.6914 21.3221C11.6914 21.6339 11.9444 21.887 12.2563 21.887Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0264 21.3221V34.9233C17.0264 35.2351 17.2795 35.4882 17.5913 35.4882C17.9027 35.4882 18.1562 35.2351 18.1562 34.9233V21.3221C18.1562 21.0102 17.9027 20.7571 17.5913 20.7571C17.2795 20.7571 17.0264 21.0102 17.0264 21.3221Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.92772 0.291473C2.72897 0.291473 0.943359 2.07708 0.943359 4.27619C0.943359 6.47529 2.72897 8.26054 4.92772 8.26054C7.12688 8.26054 8.91249 6.47535 8.91249 4.27619C8.91249 2.07702 7.12688 0.291473 4.92772 0.291473ZM4.92772 1.42136C6.50353 1.42136 7.7826 2.70043 7.7826 4.27619C7.7826 5.85165 6.50353 7.13065 4.92772 7.13065C3.35225 7.13065 2.07325 5.85165 2.07325 4.27619C2.07325 2.70037 3.35231 1.42136 4.92772 1.42136Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M30.8529 0.291473C28.6538 0.291473 26.8682 2.07708 26.8682 4.27619C26.8682 6.47529 28.6538 8.26054 30.8529 8.26054C33.0517 8.26054 34.8373 6.47535 34.8373 4.27619C34.8373 2.07702 33.0517 0.291473 30.8529 0.291473ZM30.8529 1.42136C32.4284 1.42136 33.7074 2.70043 33.7074 4.27619C33.7074 5.85165 32.4284 7.13065 30.8529 7.13065C29.2771 7.13065 27.9981 5.85165 27.9981 4.27619C27.9981 2.70037 29.2771 1.42136 30.8529 1.42136Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.04144 16.3672C8.13485 16.5555 8.32845 16.6809 8.54728 16.6809L8.75707 16.6402L13.959 14.5608C14.7597 14.2411 15.6693 14.6309 15.9895 15.4316C16.3092 16.2319 15.9191 17.1415 15.1187 17.4616L8.24863 20.2076C7.59214 20.4701 6.84869 20.2577 6.42799 19.7063C6.28112 19.5138 6.02761 19.4363 5.79791 19.5138C5.56856 19.5914 5.41413 19.8069 5.41413 20.049V22.8862C5.41413 23.1732 5.62918 23.4142 5.91394 23.4474L10.4866 23.9754C11.5672 24.1001 12.3829 25.0153 12.3829 26.1034V34.9233C12.3829 35.2352 12.636 35.4882 12.9478 35.4882C13.2597 35.4882 13.5128 35.2351 13.5128 34.9233V26.1034C13.5128 24.4413 12.2669 23.0436 10.6161 22.8531L6.54396 22.3827V21.2031C7.19555 21.5025 7.96086 21.5394 8.6678 21.257L15.5383 18.511C16.9175 17.9592 17.5898 16.3917 17.0384 15.0121C16.487 13.6324 14.9195 12.9602 13.5399 13.5116L8.78082 15.4139L6.04687 10.9392C5.66085 10.3072 5.03148 9.86242 4.30722 9.70911C4.28501 9.70462 4.2628 9.69972 4.24017 9.69517C3.48124 9.53471 2.68993 9.70947 2.06925 10.1746C1.44856 10.6401 1.05876 11.3504 0.999974 12.124C0.667772 16.4952 0.00153606 25.2556 0.00153606 25.2556C0.000354475 25.2699 0 25.2842 0 25.2986C0 26.9587 1.24326 28.3553 2.89175 28.5481L6.96874 29.0746V34.9233C6.96874 35.2352 7.22184 35.4882 7.53366 35.4882C7.84548 35.4882 8.09857 35.2351 8.09857 34.9233V28.5779C8.09857 28.2935 7.88766 28.054 7.60591 28.0174L3.02609 27.4265C1.9531 27.3027 1.14141 26.3994 1.12977 25.3215C1.12977 25.3185 2.12632 12.2096 2.12632 12.2096C2.16058 11.761 2.38656 11.3486 2.74665 11.0789C3.10709 10.8089 3.56584 10.7075 4.00645 10.8006L4.07309 10.8145C4.49344 10.9035 4.85837 11.1618 5.08246 11.5283C5.93704 12.9271 7.66912 15.7624 8.007 16.3156C8.01846 16.3337 8.02974 16.351 8.04144 16.3672Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5565 17.189L5.37188 20.1609C6.0562 21.281 7.44899 21.7443 8.66814 21.2569C8.95775 21.1413 9.09901 20.8121 8.98304 20.5229C8.86742 20.2332 8.53823 20.092 8.24898 20.2076C7.54168 20.4905 6.73342 20.2219 6.33605 19.5719L4.52073 16.5999C4.35802 16.334 4.00999 16.25 3.74413 16.4123C3.47816 16.5751 3.39379 16.923 3.5565 17.189Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.4758 16.27L21.0056 17.0435C19.5345 17.2514 18.5093 18.6148 18.7172 20.0859C18.9251 21.5567 20.2885 22.5822 21.7596 22.3743L28.4874 21.4226C28.7491 21.3856 29.0007 21.3111 29.2354 21.203V22.3825L25.1632 22.8529C23.5124 23.0435 22.2666 24.4411 22.2666 26.1032V34.9231C22.2666 35.235 22.5197 35.4881 22.8315 35.4881C23.1433 35.4881 23.3964 35.235 23.3964 34.9231V26.1032C23.3964 25.0152 24.2122 24.0999 25.2927 23.9752L29.8639 23.4472H29.8627C30.1456 23.4163 30.3651 23.1768 30.3651 22.886V20.0485C30.3651 19.8063 30.2107 19.5913 29.9814 19.5137C29.752 19.4357 29.4985 19.5134 29.3513 19.7058C29.1039 20.0297 28.7374 20.2462 28.3291 20.3039L21.6013 21.2552C20.7475 21.3761 19.9566 20.7811 19.8361 19.9273C19.7152 19.0738 20.3102 18.2829 21.1637 18.162L26.8964 17.3515L26.8188 17.3567L27.3009 17.0863L30.3576 12.0828C30.7485 11.4433 31.4645 11.0761 32.2121 11.1326C32.2227 11.1333 32.2329 11.134 32.2434 11.1348C33.2505 11.2109 34.0425 12.0267 34.0885 13.0353L34.6493 25.3104C34.6432 26.3928 33.8297 27.3016 32.7529 27.4263L28.2684 27.9442C27.9863 27.9766 27.7724 28.2135 27.7686 28.4975L27.6805 34.9152C27.6763 35.2271 27.926 35.4836 28.2375 35.4881C28.5494 35.4922 28.8059 35.2425 28.8104 34.9307L28.8914 29.0093L32.8825 28.5486C34.5333 28.358 35.7792 26.96 35.7792 25.2983C35.7792 25.2896 35.7788 25.281 35.7784 25.2723C35.7784 25.2723 35.404 17.0754 35.2172 12.9837C35.1449 11.4041 33.905 10.127 32.3285 10.0083C32.3179 10.0075 32.3074 10.0064 32.2972 10.0056C31.1267 9.91748 30.0054 10.4922 29.3934 11.4937L26.4758 16.27Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.2265 1.98628C23.2265 1.53698 23.048 1.1057 22.7301 0.787857C22.4122 0.469952 21.9814 0.291473 21.5317 0.291473H13.6499C12.7137 0.291473 11.9551 1.0504 11.9551 1.98628V9.16634C11.9551 9.53541 12.1705 9.87063 12.5065 10.0235C12.8424 10.1764 13.2367 10.1188 13.5151 9.87624C14.0585 9.40284 14.8243 8.73542 15.2509 8.36334C15.3541 8.27372 15.4859 8.22439 15.6223 8.22439H21.5316C21.9813 8.22439 22.4122 8.04585 22.7301 7.728C23.0479 7.4101 23.2264 6.97888 23.2264 6.52958V1.98628H23.2265ZM13.085 8.75244V1.98628C13.085 1.67446 13.3377 1.42136 13.6499 1.42136H21.5316C21.6815 1.42136 21.8254 1.48086 21.9312 1.58708C22.0371 1.69289 22.0966 1.83639 22.0966 1.98628V6.52958C22.0966 6.67947 22.0371 6.82297 21.9312 6.92878C21.8254 7.035 21.6815 7.0945 21.5316 7.0945H15.6224C15.2129 7.0945 14.8175 7.24249 14.5087 7.51142L13.085 8.75244Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0747 3.79108H20.1938C20.5057 3.79108 20.7587 3.53799 20.7587 3.22617C20.7587 2.91435 20.5056 2.66125 20.1938 2.66125H15.0747C14.7629 2.66125 14.5098 2.91435 14.5098 3.22617C14.5098 3.53799 14.7628 3.79108 15.0747 3.79108Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0747 5.8513H17.5917C17.9032 5.8513 18.1566 5.5982 18.1566 5.28638C18.1566 4.9745 17.9032 4.72147 17.5917 4.72147H15.0747C14.7629 4.72147 14.5098 4.97456 14.5098 5.28638C14.5097 5.5982 14.7628 5.8513 15.0747 5.8513Z" fill="#ed1d24" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.79 21.663L28.4874 21.4227C29.284 21.3101 29.9883 20.8472 30.4078 20.161L32.2232 17.189C32.3859 16.9231 32.3015 16.5751 32.0356 16.4124C31.7697 16.2501 31.4217 16.3341 31.259 16.6L29.4437 19.572C29.2004 19.9701 28.7913 20.2386 28.3292 20.3041L26.6317 20.5441C26.3229 20.5878 26.1075 20.874 26.1511 21.1828C26.1948 21.4912 26.4811 21.7066 26.79 21.663Z" fill="#ed1d24" />
+                            </svg>
+                            <h6>Need more help?</h6>
+                            <p>Feeling inquisitive? Have a read through some of our FAQs or <a href="#">contact</a> our Supporters for help</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-30">
+                    <div class="box-faq-right">
+                        <h1 class="title tg-element-title mb-20">Frequently asked questions</h1>
+                        <p class="tg-element-title mb-40">Our power of choice is untrammelled and when nothing preventsbeing able to do what we like best every pleasure.</p>
+                        <div class="block-faqs">
+                            <div class="accordion wow fadeInUp" id="accordionFAQ">
+                            <?php 
+                                $faq_query = new WP_Query(array(
+                                    'post_type' => 'faq',
+                                    'posts_per_page' => -1, // Retrieve all posts
+                                ));
+ 
+                                if ($faq_query->have_posts()) : 
+                                    while ($faq_query->have_posts()) : $faq_query->the_post(); 
+                                ?>
+                                                <div class="accordion-item">
+                                                    <h5 class="accordion-header" id="heading<?php the_ID();?>">
+                                                        <button class="accordion-button text-heading-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php the_ID();?>" aria-expanded="true" aria-controls="collapse<?php the_ID();?>">
+                                                           <?php the_title();?>
+                                                        </button>
+                                                    </h5>
+                                                    <div class="accordion-collapse collapse" id="collapse<?php the_ID();?>" aria-labelledby="heading<?php the_ID();?>" data-bs-parent="#accordionFAQ">
+                                                        <div class="accordion-body"><?php echo wp_trim_words(esc_html(get_the_excerpt()), 30); ?></div>
+                                                    </div>
+                                                </div> 
+
+                                                <?php
+                                    endwhile;
+                                    wp_reset_postdata(); // Reset post data query
+                                else :
+                                    echo 'No management posts found.';
+                                endif;
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ -->
+    <!-- Marketing Expert -->
+    <section class="marketing_expert__area_six">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-30">
+                    <h1 class="title mb-15">Want to join us in our next event?</h1>
+                    <p class="mb-45">Are you ready to experience an unforgettable gathering filled with excitement, inspiration, and meaningful connections? Join us for our upcoming event where we bring together a diverse community of individuals eager to learn, share, and grow together.
+
+                    </p>
+                    <div class="about__list-box mb-35">
+                        <ul class="list-wrap">
+                            <li><i class="flaticon-arrow-button"></i>We handpick events that interest you</li>
+                            <li><i class="flaticon-arrow-button"></i>Analysis &amp; Research</li>
+                            <li><i class="flaticon-arrow-button"></i>Each event is meticulously evaluated</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-two">More Events</a>
+                </div>
+                <div class="col-lg-7 mb-30 position-relative">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/icon-square.svg" class="shape-top-right" />
+                    <div class="box-video">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/img-marketing.png" />
+                        <a href="#" class="popup-youtube bnt-play"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/play.svg" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box-video-small">
+                <div class="item-video-small">
+                    <div class="video-small-left">
+                        <div class="video-small-left-inner">
+                            <div class="video-small-left-1">
+                                <h3>12<sup>th</sup></h3>
+                                <p>June,2024</p>
+                            </div>
+                            <div class="video-small-left-2">
+                                <p class="mb-0">From 3,600.00 KSh</p>
+                                <h2>Kitenge Fashion Fest & Awards Gala</h2>
+                                <p>The Hanye is Back! Episode 5 is the Highschool Reunion. Calling all Alumni!! Its time to link up with your highschool squad and swag! Your Deskies! Your bunkies! Even your Highschool sweetheart 😍We’ve got to your Funkie days! </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-small-right">
+                        <div class="box-video">
+                            <a href="#" class="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/home6/img-video.png" class="h300" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end Marketing -->
+ <!-- blog-post-area -->
+<section class="blog__post-area-four">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="section-title text-center mb-50 tg-heading-subheading animation-style3">
+                    <span class="sub-title">OUR BLOG UPDATE</span>
+                    <h2 class="title tg-element-title">Featured News And Insights</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+
+            <?php
+            // Query latest posts
+            $latest_posts = new WP_Query(array(
+                'posts_per_page' => 3, // Number of posts to display
+                'post_status' => 'publish', // Only published posts
+            ));
+
+            // Check if there are posts
+            if ($latest_posts->have_posts()) :
+                while ($latest_posts->have_posts()) :
+                    $latest_posts->the_post();
+            ?>
+                    <div class="col-xl-4 col-lg-6 col-md-10">
+                        <div class="blog-post-item blog__post-three shine-animate-item h-100">
+                            <div class="blog-post-thumb blog__post-thumb-three">
+                                <a class='shine-animate' href='<?php the_permalink(); ?>'><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="<?php the_title_attribute(); ?>"></a>
+                            </div>
+                            <div class="blog-post-content blog__post-content-three">
+                                <a class='post-tag' href='<?php echo esc_url(get_category_link(get_the_category()[0]->term_id)); ?>'><?php echo esc_html(get_the_category()[0]->name); ?></a>
+                                <h2 class="title"><a href='<?php the_permalink(); ?>'><?php the_title(); ?></a></h2>
+                                <div class="blog-post-meta mb-20">
+                                    <ul class="list-wrap">
+                                        <li><i class="fas fa-calendar-alt"></i><?php echo get_the_date('M d, Y'); ?></li>
+                                    </ul>
+                                </div>
+                                <a class='btn' href='<?php the_permalink(); ?>'>Continue Reading</a>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                endwhile;
+                wp_reset_postdata(); // Restore global post data
+            else :
+                // If no posts found
+                echo '<p>No posts found.</p>';
+            endif;
+            ?>
+
+        </div>
+    </div>
+</section>
+<!-- blog-post-area-end -->
+
+
+<?php
+get_footer();
+?>
